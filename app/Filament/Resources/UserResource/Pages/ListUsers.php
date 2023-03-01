@@ -7,7 +7,6 @@ use Closure;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Resources\Table;
-use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 
 class ListUsers extends ListRecords
@@ -28,7 +27,7 @@ class ListUsers extends ListRecords
      */
     protected function getTableRecordActionUsing() : ?Closure
     {
-        return fn() : Action => Actions\DeleteAction::make();
+        return fn() : \Filament\Tables\Actions\Action => \Filament\Tables\Actions\DeleteAction::make();
     }
 
     protected function getActions() : array
